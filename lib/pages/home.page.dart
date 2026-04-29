@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lista_de_compras/model/item_list.model.dart';
 import 'package:lista_de_compras/widgets/add_list.widget.dart';
 import 'package:lista_de_compras/widgets/empty_list.widget.dart';
+import 'package:lista_de_compras/widgets/settings_system.widget.dart';
 import 'package:lista_de_compras/widgets/shopping_list.widget.dart';
 
 class Home extends StatefulWidget {
@@ -43,7 +44,16 @@ class _HomeState extends State<Home> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10),
-            child: Icon(Icons.diamond_sharp, color: Colors.amber, size: 35),
+            child: Icon(Icons.diamond_sharp, color: Colors.amber, size: 30),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SettingsSystem()),
+              );
+            },
+            icon: Icon(Icons.settings, size: 30),
           ),
         ],
       ),

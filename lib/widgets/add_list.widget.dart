@@ -22,7 +22,7 @@ class _AddListState extends State<AddList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.green,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +73,7 @@ class _AddListState extends State<AddList> {
                     side: const BorderSide(color: Colors.white),
                     backgroundColor: Colors.white,
                   ),
-                  child: Text("Criar", style: TextStyle(color: Colors.blue)),
+                  child: Text("Criar", style: TextStyle(color: Colors.green)),
                 ),
               ],
             ),

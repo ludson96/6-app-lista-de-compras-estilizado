@@ -47,12 +47,7 @@ class _AddItemState extends State<AddItem> {
                   "Adicionar Item",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-                IconButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  icon: Icon(Icons.close),
-                ),
+                CloseButton(),
               ],
             ),
             Divider(),
@@ -92,7 +87,7 @@ class _AddItemState extends State<AddItem> {
                   onPressed: addItemInList,
                   child: Text(
                     "Adicionar",
-                    style: TextStyle(color: Colors.blue),
+                    style: TextStyle(color: Colors.green),
                   ),
                 ),
               ],

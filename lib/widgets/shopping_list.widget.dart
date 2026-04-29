@@ -21,30 +21,33 @@ class _ShoppingListState extends State<ShoppingList> {
         final total = itemList.items.length;
         final bought = itemList.items.where((item) => item.isBuy).length;
 
-        return Card(
-          key: Key("shoppingListCard"),
-          child: ListTile(
-            title: Row(
-              children: [
-                Expanded(child: Text(itemList.name)),
-                Text(
-                  "$bought/$total",
-                  style: TextStyle(color: Colors.green, fontSize: 14),
-                ),
-              ],
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Card(
+            key: Key("shoppingListCard"),
+            child: ListTile(
+              title: Row(
+                children: [
+                  Expanded(child: Text(itemList.name)),
+                  Text(
+                    "$bought/$total",
+                    style: TextStyle(color: Colors.green, fontSize: 14),
+                  ),
+                ],
+              ),
+              subtitle: LinearProgressIndicator(
+                value: total == 0 ? 0 : bought / total,
+                color: Colors.green,
+              ),
+              onTap: () async {
+                await Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => ItemDetailsPage(itemList: itemList),
+                  ),
+                );
+                setState(() {});
+              },
             ),
-            subtitle: LinearProgressIndicator(
-              value: total == 0 ? 0 : bought / total,
-              color: Colors.green,
-            ),
-            onTap: () async {
-              await Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => ItemDetailsPage(itemList: itemList),
-                ),
-              );
-              setState(() {});
-            },
           ),
         );
       },
