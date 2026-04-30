@@ -22,7 +22,9 @@ class _AddListState extends State<AddList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Theme.of(context).brightness == Brightness.dark
+          ? Colors.black
+          : Colors.green,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -35,14 +37,8 @@ class _AddListState extends State<AddList> {
                 child: TextFormField(
                   key: Key("listNameInput"),
                   controller: nameController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     label: Text("Nome da lista"),
-                    border: UnderlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.zero,
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
                   ),
                 ),
               ),
@@ -51,12 +47,12 @@ class _AddListState extends State<AddList> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                TextButton(
+                OutlinedButton(
                   key: Key("backToListsBtn"),
                   onPressed: () {
                     return Navigator.of(context).pop();
                   },
-                  style: TextButton.styleFrom(
+                  style: OutlinedButton.styleFrom(
                     padding: EdgeInsets.symmetric(horizontal: 70),
                     side: const BorderSide(color: Colors.white),
                     shape: RoundedRectangleBorder(
@@ -65,15 +61,13 @@ class _AddListState extends State<AddList> {
                   ),
                   child: Text("Voltar", style: TextStyle(color: Colors.white)),
                 ),
-                TextButton(
+                FilledButton(
                   key: Key("createListBtn"),
                   onPressed: addList,
-                  style: TextButton.styleFrom(
+                  style: FilledButton.styleFrom(
                     padding: EdgeInsets.symmetric(horizontal: 70),
-                    side: const BorderSide(color: Colors.white),
-                    backgroundColor: Colors.white,
                   ),
-                  child: Text("Criar", style: TextStyle(color: Colors.green)),
+                  child: Text("Criar"),
                 ),
               ],
             ),

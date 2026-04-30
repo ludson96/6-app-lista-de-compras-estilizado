@@ -50,7 +50,7 @@ class _AddItemState extends State<AddItem> {
                 CloseButton(),
               ],
             ),
-            Divider(),
+            Divider(thickness: 2),
             TextFormField(
               key: Key("inputItem"),
               controller: nameItemController,

@@ -38,6 +38,7 @@ class _ShoppingListState extends State<ShoppingList> {
               subtitle: LinearProgressIndicator(
                 value: total == 0 ? 0 : bought / total,
                 color: Colors.green,
+                backgroundColor: Colors.white,
               ),
               onTap: () async {
                 await Navigator.of(context).push(

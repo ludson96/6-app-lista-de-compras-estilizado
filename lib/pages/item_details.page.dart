@@ -45,7 +45,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
               widget.itemList.name,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            Divider(),
+            Divider(color: Colors.grey),
             Flexible(
               child: ListView.builder(
                 shrinkWrap: true,
@@ -80,6 +80,9 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
                               fontSize: 16,
                               color: widget.itemList.items[index].isBuy == true
                                   ? Colors.grey
+                                  : Theme.of(context).brightness ==
+                                        Brightness.dark
+                                  ? Colors.white
                                   : Colors.black,
                             ),
                           ),
