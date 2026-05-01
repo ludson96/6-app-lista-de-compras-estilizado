@@ -43,7 +43,6 @@ ThemeData darkTheme() {
         Colors.white,
       ), // Altere Colors.black para a cor desejada
     ),
-    
   );
 }
 

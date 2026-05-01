@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
-
-class SettingsSystem extends StatefulWidget {
-  const SettingsSystem({super.key});
-
-  @override
-  State<SettingsSystem> createState() => _SettingsSystemState();
-}
+import 'package:lista_de_compras/stores/theme.store.dart';
 
 // Em Dart, enums são definidos com identificadores, não strings.
 // Para associar uma string a cada membro do enum, usamos "enhanced enums" (disponível a partir do Dart 2.17).
 enum AppearanceOptions {
-  system("Sistema"),
-  light("Claro"),
-  dark("Escuro");
+  system("Sistema", ThemeMode.system),
+  light("Claro", ThemeMode.light),
+  dark("Escuro", ThemeMode.dark);
 
-  const AppearanceOptions(this.label);
+  const AppearanceOptions(this.label, this.themeMode);
   final String label;
+  final ThemeMode themeMode;
 }
 
-class _SettingsSystemState extends State<SettingsSystem> {
-  AppearanceOptions _selectedAppearance = AppearanceOptions.system;
+class SettingsSystem extends StatelessWidget {
+  const SettingsSystem({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Calcula a seleção inicial no momento em que a tela é construída,
+    // baseando-se no valor atual salvo no ValueNotifier global.
+    final AppearanceOptions initialAppearance = AppearanceOptions.values
+        .firstWhere(
+          (option) => option.themeMode == themeController.themeNotifier.value,
+          orElse: () => AppearanceOptions.system,
+        );
+
     return Scaffold(
       appBar: AppBar(title: const Text("Preferência do usuário")),
       body: SafeArea(
@@ -36,13 +39,10 @@ class _SettingsSystemState extends State<SettingsSystem> {
                 inputDecorationTheme: const InputDecorationTheme(
                   border: InputBorder.none,
                 ),
-                initialSelection: _selectedAppearance,
+                initialSelection: initialAppearance,
                 onSelected: (AppearanceOptions? value) {
                   if (value == null) return;
-                  setState(() {
-                    _selectedAppearance = value;
-                    // TODO: Criar o controller e alterar o tema do app por aqui.
-                  });
+                  themeController.changeTheme(value.themeMode);
                 },
                 dropdownMenuEntries: AppearanceOptions.values
                     .map<DropdownMenuEntry<AppearanceOptions>>((
