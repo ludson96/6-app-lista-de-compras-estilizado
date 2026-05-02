@@ -27,7 +27,12 @@ class SettingsSystem extends StatelessWidget {
         );
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Preferência do usuário")),
+      appBar: AppBar(
+        title: const Text(
+          "Preferência do usuário",
+          style: TextStyle(fontWeight: .w500),
+        ),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -51,6 +56,12 @@ class SettingsSystem extends StatelessWidget {
                       return DropdownMenuEntry<AppearanceOptions>(
                         value: appearance,
                         label: appearance.label,
+                        style: TextButton.styleFrom(
+                          foregroundColor: Theme.of(context).textTheme.bodyLarge?.color, // Garante a cor correta baseada no tema atual
+                          textStyle: const TextStyle(
+                            fontSize: 18,
+                          ), // Aumenta o texto das opções da lista
+                        ),
                       );
                     })
                     .toList(),

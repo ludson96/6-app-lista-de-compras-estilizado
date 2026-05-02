@@ -28,17 +28,27 @@ class _ShoppingListState extends State<ShoppingList> {
             child: ListTile(
               title: Row(
                 children: [
-                  Expanded(child: Text(itemList.name)),
+                  Expanded(
+                    child: Text(
+                      itemList.name,
+                      style: TextStyle(fontSize: 16, fontWeight: .w500),
+                    ),
+                  ),
                   Text(
                     "$bought/$total",
-                    style: TextStyle(color: Colors.green, fontSize: 14),
+                    style: TextStyle(
+                      color: Colors.green,
+                      fontSize: 16,
+                      fontWeight: .w500,
+                    ),
                   ),
                 ],
               ),
-              subtitle: LinearProgressIndicator(
-                value: total == 0 ? 0 : bought / total,
-                color: Colors.green,
-                backgroundColor: Colors.white,
+              subtitle: Padding(
+                padding: const EdgeInsets.only(top: 30, bottom: 10),
+                child: LinearProgressIndicator(
+                  value: total == 0 ? 0 : bought / total,
+                ),
               ),
               onTap: () async {
                 await Navigator.of(context).push(
@@ -46,7 +56,6 @@ class _ShoppingListState extends State<ShoppingList> {
                     builder: (context) => ItemDetailsPage(itemList: itemList),
                   ),
                 );
-                setState(() {});
               },
             ),
           ),

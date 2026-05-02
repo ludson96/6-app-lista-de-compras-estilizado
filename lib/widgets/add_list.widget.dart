@@ -39,6 +39,13 @@ class _AddListState extends State<AddList> {
                   controller: nameController,
                   decoration: const InputDecoration(
                     label: Text("Nome da lista"),
+                    filled: true,
+                    fillColor: Colors.white,
+                    labelStyle: TextStyle(color: Colors.black),
+                    border: UnderlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.zero,
+                    ),
                   ),
                 ),
               ),

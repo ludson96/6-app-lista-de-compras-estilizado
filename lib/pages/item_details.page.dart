@@ -45,7 +45,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
               widget.itemList.name,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            Divider(color: Colors.grey),
+            Divider(thickness: 0),
             Flexible(
               child: ListView.builder(
                 shrinkWrap: true,
@@ -77,7 +77,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
                           child: Text(
                             widget.itemList.items[index].name,
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 18,
                               color: widget.itemList.items[index].isBuy == true
                                   ? Colors.grey
                                   : Theme.of(context).brightness ==
@@ -89,7 +89,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
                         ),
                         Text(
                           " R\$ ${widget.itemList.items[index].value.toStringAsFixed(2)}",
-                          style: TextStyle(fontSize: 16),
+                          style: TextStyle(fontSize: 18),
                         ),
                       ],
                     ),
@@ -103,10 +103,10 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Não marcados"),
+                    Text("Não marcados", style: TextStyle(fontSize: 18)),
                     Text(
                       "R\$ ${notMarked.fold(0.0, (acc, element) => acc + element.value).toStringAsFixed(2)}",
-                      style: TextStyle(color: Colors.blue, fontSize: 16),
+                      style: TextStyle(color: Colors.blue, fontSize: 18),
                     ),
                   ],
                 ),
@@ -114,10 +114,10 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Marcados"),
+                    Text("Marcados", style: TextStyle(fontSize: 18)),
                     Text(
                       "R\$ ${marked.fold(0.0, (acc, element) => acc + element.value).toStringAsFixed(2)}",
-                      style: TextStyle(color: Colors.green, fontSize: 16),
+                      style: TextStyle(color: Colors.green, fontSize: 18),
                     ),
                   ],
                 ),

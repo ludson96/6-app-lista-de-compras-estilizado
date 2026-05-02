@@ -25,23 +25,33 @@ ThemeData darkTheme() {
         foregroundColor: Colors.white,
       ),
     ),
-    inputDecorationTheme: InputDecorationTheme(
-      filled: true,
-      fillColor: Colors.grey[900],
-      // labelStyle: TextStyle(color: Colors.black),
-      border: UnderlineInputBorder(
-        borderSide: BorderSide.none,
-        borderRadius: BorderRadius.zero,
-      ),
-    ),
+
     dividerTheme: DividerThemeData(color: Colors.white),
+
     iconButtonTheme: IconButtonThemeData(
       style: IconButton.styleFrom(foregroundColor: Colors.white),
     ),
+
     checkboxTheme: CheckboxThemeData(
-      checkColor: WidgetStateProperty.all(
-        Colors.white,
-      ), // Altere Colors.black para a cor desejada
+      checkColor: WidgetStateProperty.all(Colors.white),
+    ),
+
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(color: Colors.white),
+      bodyMedium: TextStyle(fontSize: 16, color: Colors.white),
+    ),
+
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      color: Colors.green,
+      linearTrackColor: Colors.white,
+      linearMinHeight: 6,
+    ),
+
+    dropdownMenuTheme: DropdownMenuThemeData(
+      menuStyle: MenuStyle(
+        backgroundColor: WidgetStateProperty.all(Colors.grey[900]),
+      ),
+      textStyle: const TextStyle(color: Colors.white, fontSize: 18),
     ),
   );
 }
@@ -68,6 +78,34 @@ ThemeData lightTheme() {
         borderSide: BorderSide.none,
         borderRadius: BorderRadius.zero,
       ),
+    ),
+    filledButtonTheme: FilledButtonThemeData(
+      style: FilledButton.styleFrom(
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.green,
+        elevation: 2,
+      ),
+    ),
+
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      color: Colors.green,
+      linearTrackColor: Colors.grey,
+      linearMinHeight: 6,
+    ),
+
+    iconButtonTheme: IconButtonThemeData(
+      style: IconButton.styleFrom(foregroundColor: Colors.black),
+    ),
+
+    dividerTheme: DividerThemeData(color: Colors.black),
+
+    textTheme: const TextTheme(bodyMedium: TextStyle(fontSize: 16)),
+
+    dropdownMenuTheme: DropdownMenuThemeData(
+      menuStyle: MenuStyle(
+        backgroundColor: WidgetStateProperty.all(Colors.white),
+      ),
+      textStyle: const TextStyle(color: Colors.black, fontSize: 18),
     ),
   );
 }
