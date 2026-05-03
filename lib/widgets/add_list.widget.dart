@@ -35,7 +35,7 @@ class _AddListState extends State<AddList> {
               child: Form(
                 key: formKey,
                 child: TextFormField(
-                  key: Key("listNameInput"),
+                  key: Key("inputNameList"),
                   controller: nameController,
                   style: const TextStyle(color: Colors.black),
                   decoration: const InputDecoration(
@@ -56,7 +56,7 @@ class _AddListState extends State<AddList> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 OutlinedButton(
-                  key: Key("backToListsBtn"),
+                  key: Key("btnBackList"),
                   onPressed: () {
                     return Navigator.of(context).pop();
                   },
@@ -70,7 +70,7 @@ class _AddListState extends State<AddList> {
                   child: Text("Voltar", style: TextStyle(color: Colors.white)),
                 ),
                 FilledButton(
-                  key: Key("createListBtn"),
+                  key: Key("btnCreateList"),
                   onPressed: addList,
                   style: FilledButton.styleFrom(
                     padding: EdgeInsets.symmetric(horizontal: 70),

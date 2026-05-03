@@ -9,7 +9,7 @@ ThemeData darkTheme() {
       brightness: Brightness.dark,
     ),
     appBarTheme: const AppBarTheme(
-      backgroundColor: Color(0xFF121212),
+      backgroundColor: Colors.black,
       foregroundColor: Colors.white,
     ),
     scaffoldBackgroundColor: Color(0xFF121212),

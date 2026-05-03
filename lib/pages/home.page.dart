@@ -36,8 +36,8 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
+          key: Key("tittleAppBar"),
           "Minhas listas",
-          key: Key("appBarTitle"),
           style: TextStyle(fontWeight: FontWeight.w500),
         ),
         centerTitle: true,
@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
           ? const EmptyList()
           : ShoppingList(itemsList: itemLists),
       floatingActionButton: FloatingActionButton(
-        key: Key("addListBtn"),
+        key: Key("btnAddList"),
         onPressed: addList,
         shape: CircleBorder(),
         child: Icon(Icons.add),

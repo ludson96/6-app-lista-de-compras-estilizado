@@ -24,7 +24,7 @@ class _ShoppingListState extends State<ShoppingList> {
         return Padding(
           padding: const EdgeInsets.all(8.0),
           child: Card(
-            key: Key("shoppingListCard"),
+            key: Key("cardList"),
             child: ListTile(
               title: Row(
                 children: [
@@ -56,6 +56,9 @@ class _ShoppingListState extends State<ShoppingList> {
                     builder: (context) => ItemDetailsPage(itemList: itemList),
                   ),
                 );
+
+                if (!mounted) return;
+                setState(() {});
               },
             ),
           ),
