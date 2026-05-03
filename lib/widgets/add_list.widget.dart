@@ -23,7 +23,7 @@ class _AddListState extends State<AddList> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).brightness == Brightness.dark
-          ? Colors.black
+          ? Color(0xFF121212)
           : Colors.green,
       body: Center(
         child: Column(
@@ -37,6 +37,7 @@ class _AddListState extends State<AddList> {
                 child: TextFormField(
                   key: Key("listNameInput"),
                   controller: nameController,
+                  style: const TextStyle(color: Colors.black),
                   decoration: const InputDecoration(
                     label: Text("Nome da lista"),
                     filled: true,

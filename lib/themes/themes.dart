@@ -8,17 +8,19 @@ ThemeData darkTheme() {
       brightness: Brightness.dark,
     ),
     appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF121212),
       foregroundColor: Colors.white,
     ),
-    scaffoldBackgroundColor: Colors.black,
+    scaffoldBackgroundColor: Color(0xFF121212),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: Colors.green,
       foregroundColor: Colors.white,
     ),
     cardTheme: CardThemeData(color: Colors.green[900]),
     listTileTheme: ListTileThemeData(textColor: Colors.white),
-    bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.grey[900]),
+
+    bottomSheetTheme: BottomSheetThemeData(backgroundColor: Color(0xFF121212)),
+
     filledButtonTheme: FilledButtonThemeData(
       style: FilledButton.styleFrom(
         backgroundColor: Colors.green,
@@ -39,6 +41,11 @@ ThemeData darkTheme() {
     textTheme: const TextTheme(
       bodyLarge: TextStyle(color: Colors.white),
       bodyMedium: TextStyle(fontSize: 16, color: Colors.white),
+    ),
+
+    inputDecorationTheme: const InputDecorationTheme(
+      labelStyle: TextStyle(color: Colors.white),
+      floatingLabelStyle: TextStyle(color: Colors.white),
     ),
 
     progressIndicatorTheme: ProgressIndicatorThemeData(
