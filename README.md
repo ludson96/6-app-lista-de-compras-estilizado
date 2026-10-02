@@ -4,7 +4,6 @@
 [![Dart](https://img.shields.io/badge/Dart-3.10+-0175C2.svg?style=for-the-badge&logo=dart)](https://dart.dev/)
 [![Material Design 3](https://img.shields.io/badge/Material_Design-3-757575.svg?style=for-the-badge&logo=material-design)](https://m3.material.io/)
 [![State Management](https://img.shields.io/badge/State_Management-ValueNotifier-00D2B8.svg?style=for-the-badge)](https://api.flutter.dev/flutter/foundation/ValueNotifier-class.html)
-[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
 > 🇧🇷 **Português** | 🇺🇸 [**English Version**](README.en.md)
 
